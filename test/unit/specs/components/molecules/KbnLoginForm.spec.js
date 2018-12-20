@@ -1,7 +1,7 @@
 // test-utilsはVue.js公式のテストライブラリ
 // test-utilsが持つAPIのmount()メソッドをimport
 import { mount } from '@vue/test-utils'
-import KbnLoginForm from '@/components/molecules/KbnLoginForm.spec.js'
+import KbnLoginForm from '@/components/molecules/KbnLoginForm.vue'
 
 describe('KbnLoginForm', () => {
   describe('プロパティ', () => {
@@ -11,7 +11,7 @@ describe('KbnLoginForm', () => {
         loginForm = mount(KbnLoginForm, {
           propsData: { onlogin: () => {}}
         })
-        log.vm.$nextTick(done)
+        loginForm.vm.$nextTick(done)
       })
 
       describe('email', () => {
@@ -146,7 +146,7 @@ describe('KbnLoginForm', () => {
       })
       describe('resolve', () => {
         it('resolveされること', done => {
-          onloginStub.resolve()
+          onloginStub.resolves()
           loginForm.find('button').trigger('click')
           expect(onloginStub.called).to.equal(false)
           expect(loginForm.vm.error).to.equal('')
