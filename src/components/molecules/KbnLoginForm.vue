@@ -9,10 +9,10 @@
         autocomplete="off"
         placeholder="例: trello@domain.com"
         @focus="resetError">
-        <ul class="validation-errors">
-          <li v-if="!validation.email.format">メールアドレスの形式が不正です。</li>
-          <li v-if="!validation.email.required">メールアドレスが入力されていません。</li>
-        </ul>
+      <ul class="validation-errors">
+        <li v-if="!validation.email.format">メールアドレスの形式が不正です。</li>
+        <li v-if="!validation.email.required">メールアドレスが入力されていません。</li>
+      </ul>
     </div>
     <div class="form-item">
       <label for="password">パスワード</label>
@@ -23,9 +23,9 @@
         autocomplete="off"
         placeholder="例: wwwwwwww"
         @focus="resetError">
-        <ul class="validation-errors">
-          <li v-if="!validation.email.required">パスワードが入力されていません。</li>
-        </ul>
+      <ul class="validation-errors">
+        <li v-if="!validation.email.required">パスワードが入力されていません。</li>
+      </ul>
     </div>
     <div class="form-actions">
       <KbnButton
@@ -90,10 +90,10 @@ export default {
       const validation = this.validation
       const fields = Object.keys(validation)
       let valid = true
-      for (let i = 0; i< fields.length; i++) {
+      for (let i = 0; i < fields.length; i++) {
         const field = fields[i]
         valid = Object.keys(validation[field]).every(key => validation[field][key])
-        if(!valid) { break }
+        if (!valid) { break }
       }
       return valid
     },
@@ -111,12 +111,12 @@ export default {
       this.error = ''
       this.$nextTick(() => {
         this.onlogin({ email: this.email, password: this.password })
-        .catch(err => {
-          this.error = err.message
-        })
-        .then(() => {
-          this.progress = false
-        })
+          .catch(err => {
+            this.error = err.message
+          })
+          .then(() => {
+            this.progress = false
+          })
       })
     }
   }
@@ -136,7 +136,7 @@ export default {
 
   input {
     width: 100%;
-    padding: 5em;
+    padding: 0.5em;
     font: inherit;
   }
 
@@ -158,4 +158,3 @@ export default {
     font-size: 0.5em;
   }
 </style>
-

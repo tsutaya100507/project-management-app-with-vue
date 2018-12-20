@@ -1,13 +1,13 @@
-import KbnBoardView from '@/components/template/KbnBoardView.vue'
-import KbnLoginView from '@/components/template/KbnLoginView.vue'
-import KbnTaskDetailModal from '@/components/template/KbnTaskDetailModal.vue'
+import KbnBoardView from '@/components/templates/KbnBoardView.vue'
+import KbnLoginView from '@/components/templates/KbnLoginView.vue'
+import KbnTaskDetailModal from '@/components/templates/KbnTaskDetailModal.vue'
 
 export default [
   {
     path: '/',
     component: KbnBoardView,
     meta: { requiresAuth: true }
-  }, 
+  },
   {
     path: '/login',
     component: KbnLoginView

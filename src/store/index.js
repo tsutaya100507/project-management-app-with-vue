@@ -8,7 +8,7 @@ Vue.use(Vuex)
 
 const state = {
   auth: {
-    token:  null,
+    token: null,
     userId: null
   },
   board: {

@@ -8,7 +8,7 @@ export default {
   [types.FETCH_ALL_TASKLIST] (state, payload) {
     throw new Error('FETCH_ALL_TASKLIST mutatation should be implemented')
   },
-  
+
   [types.UPDATE_TASK] (state, payload) {
     throw new Error('UPDATE_TASK mutation should be implemented')
   },
