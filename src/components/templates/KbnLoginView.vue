@@ -1,7 +1,7 @@
 <template>
   <div class="login-view">
     <h1>project management app</h1>
-    <KbnLoginForm :lonlogin="handleLogin" />
+    <KbnLoginForm :onlogin="handleLogin" />
   </div>
 </template>
 
@@ -15,7 +15,7 @@ export default {
   },
   methods: {
     handleLogin (authInfo) {
-      return this.$router.dispatch('login', authInfo)
+      return this.$store.dispatch('login', authInfo)
         .then(() => {
           this.$router.push({ path: '/' })
         })
