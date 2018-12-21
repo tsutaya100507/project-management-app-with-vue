@@ -5,7 +5,7 @@ const mockAuth = adapter => {
   const clientMock = injector({
     './client': axios.create({ adapter })
   })
-  return clientMock.defaul
+  return clientMock.default
 }
 
 describe('Auth APIモジュール', () => {
@@ -13,7 +13,7 @@ describe('Auth APIモジュール', () => {
     const token = '1234567890abcdef'
     const userId = 1
     const address = 'foo@domain.com'
-    const password ='12345678'
+    const password = '12345678'
     describe('成功', () => {
       it('token, userIdが取得できること', done => {
         const adapter = config => {
@@ -30,7 +30,6 @@ describe('Auth APIモジュール', () => {
           .then(done)
       })
     })
-    
     describe('失敗', () => {
       it('エラーメッセージを取得できること', done => {
         const message = 'failed login'

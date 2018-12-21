@@ -11,7 +11,6 @@ describe('KbnLoginView', () => {
   let $router
   let store
   let LoginFormComponentStub
-  
   const triggerLogin = (loginView, target) => {
     const loginForm = loginView.find(target)
     loginForm.vm.onlogin('foo@domain.com', '12345678')
@@ -42,7 +41,7 @@ describe('KbnLoginView', () => {
           loginView = mount(KbnLoginView, {
             mocks: { $router },
             stubs: {
-              'kbn-login-form': LoginFormComponetStub
+              'kbn-login-form': LoginFormComponentStub
             },
             store,
             localVue
@@ -73,7 +72,7 @@ describe('KbnLoginView', () => {
           loginView.vm.throwReject.restore()
         })
         it('エラー処理が呼び出されること', done => {
-          const messaege = 'login failed'
+          const message = 'login failed'
           actions.login.rejects(new Error(message))
           triggerLogin(loginView, LoginFormComponentStub)
           loginView.vm.$nextTick(() => {

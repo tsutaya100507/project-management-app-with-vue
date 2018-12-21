@@ -9,7 +9,7 @@ describe('KbnLoginForm', () => {
       let loginForm
       beforeEach(done => {
         loginForm = mount(KbnLoginForm, {
-          propsData: { onlogin: () => {}}
+          propsData: { onlogin: () => {} }
         })
         loginForm.vm.$nextTick(done)
       })
@@ -18,13 +18,13 @@ describe('KbnLoginForm', () => {
         describe('required', () => {
           describe('何も入力されていない', () => {
             it('validation.email.requiredがinvalidであること', () => {
-              loginForm.setData({ email: ''})
+              loginForm.setData({ email: '' })
               expect(loginForm.vm.validation.email.required).to.equal(false)
             })
           })
           describe('入力あり', () => {
             it('validation.email.requiredがvalidであること', () => {
-              loginForm.setData({ email: 'foo@domain.com'})
+              loginForm.setData({ email: 'foo@domain.com' })
               expect(loginForm.vm.validation.email.required).to.equal(true)
             })
           })
@@ -39,7 +39,7 @@ describe('KbnLoginForm', () => {
           })
           describe('メールアドレス形式のフォーマット', () => {
             it('validation.email.requiredがvalidであること', () => {
-              loginForm.setData({ email: 'foo@domain.com'})
+              loginForm.setData({ email: 'foo@domain.com' })
               expect(loginForm.vm.validation.email.format).to.equal(true)
             })
           })
@@ -76,7 +76,7 @@ describe('KbnLoginForm', () => {
         it('validになること', () => {
           loginForm.setData({
             email: 'foo@domain.com',
-            password: '12345678',
+            password: '12345678'
           })
           expect(loginForm.vm.valid).to.equal(true)
         })
@@ -85,7 +85,7 @@ describe('KbnLoginForm', () => {
         it('invalidになること', () => {
           loginForm.setData({
             email: 'foo@domain.com',
-            password: '',
+            password: ''
           })
           expect(loginForm.vm.valid).to.equal(false)
         })
@@ -104,7 +104,7 @@ describe('KbnLoginForm', () => {
         it('ログイン処理は無効', () => {
           loginForm.setData({
             email: 'foo@domain.com',
-            password: '',
+            password: ''
           })
           expect(loginForm.vm.disableLoginAction).to.equal(true)
         })
@@ -113,7 +113,7 @@ describe('KbnLoginForm', () => {
         it('ログイン処理は有効', () => {
           loginForm.setData({
             email: 'foo@domain.com',
-            password: '12345678',
+            password: '12345678'
           })
           expect(loginForm.vm.disableLoginAction).to.equal(false)
         })
@@ -123,7 +123,7 @@ describe('KbnLoginForm', () => {
           loginForm.setData({
             email: 'foo@domain.com',
             password: '12345678',
-            progress: true,
+            progress: true
           })
           expect(loginForm.vm.disableLoginAction).to.equal(true)
         })
@@ -140,7 +140,7 @@ describe('KbnLoginForm', () => {
         })
         loginForm.setData({
           email: 'foo@domain.com',
-          password: '12345678',
+          password: '12345678'
         })
         loginForm.vm.$nextTick(done)
       })

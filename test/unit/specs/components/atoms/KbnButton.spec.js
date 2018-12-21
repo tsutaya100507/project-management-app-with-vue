@@ -13,7 +13,7 @@ describe('KbnButton', () => {
       })
       describe('button', () => {
         it('kbn-buttonクラスを持つbutton要素で構成されること', () => {
-          const button = mount (KbnButton, {
+          const button = mount(KbnButton, {
             propsData: { type: 'button' }
           })
           expect(button.is('button')).to.equal(true)
@@ -41,7 +41,7 @@ describe('KbnButton', () => {
       describe('true', () => {
         it('disabled属性が付与されていること', () => {
           const button = mount(KbnButton, {
-            propsData: { disabled: true}
+            propsData: { disabled: true }
           })
           expect(button.attributes().disabled).to.equal('disabled')
         })
