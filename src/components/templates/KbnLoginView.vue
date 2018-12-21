@@ -9,7 +9,7 @@
 import KbnLoginForm from '@/components/molecules/KbnLoginForm.vue'
 
 export default {
-  name: 'KbnLoginViewf',
+  name: 'KbnLoginView',
   components: {
     KbnLoginForm
   },
