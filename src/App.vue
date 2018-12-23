@@ -1,6 +1,11 @@
 <template>
-  <div id="app">
-    <router-view/>
+  <div>
+    <div id="app">
+      <router-view/>
+    </div>
+    <ErrorBoundary id="app">
+      <router-view/>
+    </ErrorBoundary>
   </div>
 </template>
 
